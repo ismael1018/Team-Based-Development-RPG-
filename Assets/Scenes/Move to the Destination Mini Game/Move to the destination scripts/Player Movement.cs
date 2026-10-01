@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     // Moves like a grid
-    public float gridsize = 1f;
+    public float gridsize = 2f;
     
 
     // Update is called once per frame
