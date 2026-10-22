@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
+  - Goal
+  - Wall
+  - Target
+  - Shootpoint
+  - BalancePlatform
+  - Hitbox
   layers:
   - Default
   - TransparentFX

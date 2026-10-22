@@ -15,9 +15,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu Scene/Main Menu.unity
     guid: a54194a182daa9c449305822f687563c
   - enabled: 1
-    path: Assets/Scenes/Move to the Destination Mini Game/Move to the Destination
-      Mini Game.unity
+    path: Assets/Scenes/Main Menu Scene/Scripts/Move to the Destination Mini Game/Move
+      to the Destination Mini Game.unity
     guid: 58bd41d1fe609bf40a7e07c0abb06c2a
+  - enabled: 1
+    path: Assets/Scenes/Aim to win/Aim to win.unity
+    guid: 303d2a6bdef9b9e4f86d88de6554c477
+  - enabled: 1
+    path: Assets/Scenes/Balance/Balance game.unity
+    guid: 571eb6e19c621e040b6817b37b8d34a6
+  - enabled: 1
+    path: Assets/Scenes/Champaign/Champaign.unity
+    guid: 498f4c154c1399146bf1827a28c3e20b
+  - enabled: 1
+    path: Assets/Scenes/Dodge it Mini Game/Dodge it Mini Game.unity
+    guid: b09236ef08576bd4b92ae9ea48bc4ad5
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
