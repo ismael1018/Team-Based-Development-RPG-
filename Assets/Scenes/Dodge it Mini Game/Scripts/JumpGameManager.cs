@@ -60,4 +60,14 @@ public class JumpGameManager : MonoBehaviour
         if (GameFlowManager.Instance != null)
         GameFlowManager.Instance.FinishMinigame(false);
     }
+
+
+    #region Setters/Getters
+    
+    public void Set_GameTimer(float newTime) {timeLeft = newTime; }
+    public float Get_GameTimer(){return timeLeft; }
+    
+    #endregion
+
+
 }

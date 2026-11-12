@@ -34,6 +34,10 @@ public class MinigameSelector : MonoBehaviour
 
     public string GetNextScene()
     {
+
+        if (availableScenes.Length == 0)
+        return "";
+
         if (!useRandomOrder)
         {
             if (orderedScenes.Length == 0)
@@ -44,25 +48,24 @@ public class MinigameSelector : MonoBehaviour
             nextIndex++;
             return scene;
         }
-
-        if (availableScenes.Length == 0)
-        return "";
-
-        if (randomBag.Count == 0)
+        else
         {
-            randomBag.AddRange(availableScenes);
-
-            for (int i = randomBag.Count - 1; i > 0; i--)
+            if (randomBag.Count == 0)
             {
-                int j = Random.Range(0, i + 1);
-                string temp = randomBag[i];
-                randomBag[i] = randomBag[j];
-                randomBag[j] = temp;
-            }
-        }
+                randomBag.AddRange(availableScenes);
 
-        string selected = randomBag[0];
-        randomBag.RemoveAt(0);
-        return selected;
+                for (int i = randomBag.Count - 1; i > 0; i--)
+                {
+                    int j = Random.Range(0, i + 1);
+                    string temp = randomBag[i];
+                    randomBag[i] = randomBag[j];
+                    randomBag[j] = temp;
+                }
+            }
+
+            string selected = randomBag[0];
+            randomBag.RemoveAt(0);
+            return selected;
+        }
     }
 }

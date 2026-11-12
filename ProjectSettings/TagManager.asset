@@ -11,6 +11,7 @@ TagManager:
   - Shootpoint
   - BalancePlatform
   - Hitbox
+  - GameManager
   layers:
   - Default
   - TransparentFX

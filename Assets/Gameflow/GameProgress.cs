@@ -9,10 +9,12 @@ public class GameProgress : MonoBehaviour
     public float minimumTime = 3f;
     public float startingSpeed = 1f;
     public float speedIncrease = 0.2f;
+    
     public int Lives { get; private set; }
     public int GamesCompleted { get; private set; }
     public float CurrentTime { get; private set; }
     public float CurrentSpeed { get; private set; }
+
     public void ResetProgress()
     {
         Lives = startingLives;

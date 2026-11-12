@@ -27,6 +27,10 @@ public class GameFlowManager : MonoBehaviour
     private Coroutine routine;
     public bool GameplayActive { get; private set; }
 
+    public GameObject currentManager;
+
+
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -111,6 +115,8 @@ public class GameFlowManager : MonoBehaviour
         GameplayActive = false;
 
         routine = StartCoroutine(BeginMinigame(scene.name));
+        currentManager =  GameObject.FindWithTag("GameManager");
+
     }
 
     IEnumerator BeginMinigame(string sceneName)
