@@ -34,12 +34,15 @@ public class JumpGameManager : MonoBehaviour
     {
         if (gameEnded) return;
 
+        /*
         hits++;
 
         if (hitsText != null)
             hitsText.text = "Hits: " + hits + "/" + hitsAllowed;
 
         if (hits >= hitsAllowed)
+        */
+
         LoseGame();
     }
 
