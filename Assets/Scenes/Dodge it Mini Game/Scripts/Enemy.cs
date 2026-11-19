@@ -4,10 +4,16 @@ public class Enemy : MonoBehaviour
 {
     public float speed = 6f;
     private bool hasHitPlayer = false;
+    Collider2D myCol;
+
+    private void Start()
+    {
+        myCol = GetComponent<Collider2D>();   
+    }
 
     void Update()
     {
-        transform.position += Vector3.left * speed * Time.deltaTime;
+        //transform.position += Vector3.left * speed * Time.deltaTime;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -23,7 +29,7 @@ public class Enemy : MonoBehaviour
                 gameManager.PlayerHit();
             }
 
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }

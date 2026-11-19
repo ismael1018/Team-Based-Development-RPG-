@@ -6,6 +6,8 @@ public class PlayerJump : MonoBehaviour
     private bool isGrounded = true;
     private Rigidbody2D rb;
 
+    public float speed = 8f; 
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -18,6 +20,11 @@ public class PlayerJump : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             isGrounded = false; 
         }
+    }
+
+    private void FixedUpdate()
+    {
+        transform.position += Vector3.right * speed * Time.deltaTime;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
