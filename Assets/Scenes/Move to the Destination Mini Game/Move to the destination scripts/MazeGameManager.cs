@@ -6,6 +6,15 @@ public class MazeGameManager : MonoBehaviour
     public float timeLeft = 10f;
     public TMP_Text timerText;
     private bool gameEnded = false;
+    LevelLoader lvlLoader;
+
+
+    private void Start()
+    {
+        lvlLoader = LevelLoader.Instance;
+
+        lvlLoader.LoadRandomLevel();
+    }
 
     void Update()
     {
