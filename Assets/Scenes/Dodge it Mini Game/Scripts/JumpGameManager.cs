@@ -32,17 +32,6 @@ public class JumpGameManager : MonoBehaviour
 
     public void PlayerHit()
     {
-        if (gameEnded) return;
-
-        /*
-        hits++;
-
-        if (hitsText != null)
-            hitsText.text = "Hits: " + hits + "/" + hitsAllowed;
-
-        if (hits >= hitsAllowed)
-        */
-
         LoseGame();
     }
 
