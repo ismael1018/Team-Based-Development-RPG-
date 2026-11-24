@@ -3,11 +3,16 @@ using TMPro;
 
 public class GameScreens : MonoBehaviour
 {
-    private GameObject screenRoot;
-    private TMP_Text messageText;
+
+    public static GameScreens Instance; 
+
+
+    [SerializeField] private TMP_Text gameTimer;
+    [SerializeField] private TMP_Text gameIntroText;
 
     void Awake()
     {
+        /*
         GameObject canvasObject = new GameObject("GameFlowCanvas");
         Canvas canvas = canvasObject.AddComponent<Canvas>();
         canvas.renderMode = RenderMode.ScreenSpaceOverlay;
@@ -27,21 +32,46 @@ public class GameScreens : MonoBehaviour
         rect.anchorMax = Vector2.one;
         rect.offsetMin = new Vector2(30, 30);
         rect.offsetMax = new Vector2(-30, -30);
+        */
+        GameScreens.Instance = this;
 
-        Hide();
+        DontDestroyOnLoad(this);
+        HideAll();
     }
 
-    public void Show(string message)
+    public void ShowText(string message)
     {
-        messageText.text = message;
-        screenRoot.SetActive(true);
+        gameTimer.gameObject.SetActive(true);
+        gameIntroText.text = message;
     }
 
-    public void Hide()
+    public void ShowTimer()
     {
-        if (screenRoot != null)
+        gameTimer.gameObject.SetActive(false);
+    }
+
+    public void SetTimerNum(string time)
+    {
+        gameTimer.text = "Timer: " + time;
+    }
+
+    public void HideText()
+    {
+        gameIntroText.gameObject.SetActive(true);
+        gameIntroText.text = " ";
+    }
+
+
+
+
+    public void HideAll()
+    {
+        if (gameTimer != null || gameIntroText != null)
         {
-            screenRoot.SetActive(false);
+            gameTimer.gameObject.SetActive(false);
+            gameIntroText.gameObject.SetActive(false);
+            
         }
     }
+
 }
