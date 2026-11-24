@@ -123,11 +123,11 @@ public class GameFlowManager : MonoBehaviour
     {
         Time.timeScale = 0f;
 
-        screens.Show(GetIntroPhrase(sceneName));
+        screens.ShowText(GetIntroPhrase(sceneName));
 
         yield return new WaitForSecondsRealtime(introDuration);
 
-        screens.Hide();
+        screens.HideText();
         Time.timeScale = 1f;
         GameplayActive = true;
         changingScene = false;
@@ -172,11 +172,11 @@ public class GameFlowManager : MonoBehaviour
         {
             finished = true;
 
-            screens.Show("GAME OVER\n\n" + "Minigames Completed: " + progress.GamesCompleted + "\nCurrent Speed: " + progress.CurrentSpeed.ToString("F1") + "x");
+            screens.ShowText("GAME OVER\n\n" + "Minigames Completed: " + progress.GamesCompleted + "\nCurrent Speed: " + progress.CurrentSpeed.ToString("F1") + "x");
 
             yield return new WaitForSecondsRealtime(gameOverDuration);
 
-            screens.Hide();
+            screens.HideText();
             Time.timeScale = 1f;
             runStarted = false;
             changingScene = false;
@@ -185,7 +185,7 @@ public class GameFlowManager : MonoBehaviour
             yield break;
         }
 
-        screens.Show("Minigames Completed: " + progress.GamesCompleted + "\nLives Remaining: " + progress.Lives);
+        screens.ShowText("Minigames Completed: " + progress.GamesCompleted + "\nLives Remaining: " + progress.Lives);
 
         yield return new WaitForSecondsRealtime(transitionDuration);
 
